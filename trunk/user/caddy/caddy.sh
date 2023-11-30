@@ -19,10 +19,10 @@ caddy_start ()
 		if [ ! -f "$caddybin" ]; then
    logger -t "caddy" "未找到$caddybin，开始下载！"
 			if [ ! -f "$caddy_dir/caddy/caddy_filebrowser" ]; then
-				 curl -L -k -S -o "$caddy_dir/caddy/caddy_filebrowser" --connect-timeout 10 --retry 3 "https://fastly.jsdelivr.net/gh/chongshengB/rt-n56u@master/trunk/user/caddy/caddy_filebrowser"
+				 curl -L -k -S -o "$caddy_dir/caddy/caddy_filebrowser" --connect-timeout 10 --retry 3 "https://fastly.jsdelivr.net/gh/tcsr200722/Padavan-KVR-alist@master/trunk/user/caddy/caddy_filebrowser"
                                  if [ ! -f "$caddy_dir/caddy/caddy_filebrowser" ]; then
 					logger -t "caddy" "caddy_filebrowser二进制文件下载失败，重新下载！"
-                                    curl -L -k -S -o "$caddy_dir/caddy/caddy_filebrowser" --connect-timeout 10 --retry 3 "https://fastly.jsdelivr.net/gh/chongshengB/rt-n56u@master/trunk/user/caddy/caddy_filebrowser"
+                                    curl -L -k -S -o "$caddy_dir/caddy/caddy_filebrowser" --connect-timeout 10 --retry 3 "https://fastly.jsdelivr.net/gh/tcsr200722/Padavan-KVR-alist@master/trunk/user/caddy/caddy_filebrowser"
 				else
 					logger -t "caddy" "caddy_filebrowser二进制文件下载成功"
 					chmod -R 777 $caddy_dir/caddy/caddy_filebrowser
