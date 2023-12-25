@@ -41,6 +41,8 @@ fi
 cat /tmp/cw /tmp/cf > $caddyfile
 rm -f /tmp/cw
 rm -f /tmp/cf
+caddybin="/usr/bin/caddy_filebrowser"
+if [ ! -f "$caddybin" ]; then
 caddybin="$caddy_dir/caddy/caddy_filebrowser"
-[ -f /etc/storage/bin/caddy_filebrowser ] && caddybin="/etc/storage/bin/caddy_filebrowser"
+fi
 $caddybin -conf $caddyfile &
